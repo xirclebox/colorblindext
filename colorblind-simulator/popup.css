@@ -1,0 +1,213 @@
+:root {
+  --cb-light: #fff;
+  --cb-dark: #11121f;
+  --cb-grey: #34343b;
+  --cb-light-grey: #aaaaaa;
+  --cb-pale-grey: #c6c6c6;
+  --cb-dark-grey: #141416;
+  --cb-cyan: cyan;
+  --cb-royal: #371b8f;
+  --cb-lavender: #ede7ff;
+  --cb-dusk: #292c55;
+  --cb-body: var(--cb-dark);
+
+  --cb-text--cb-dark: var(--cb-dark-grey);
+  --cb-text--cb-mid: var(--cb-light-grey);
+  --cb-text--cb-light: var(--cb-light);
+
+  --cb-text: var(--cb-text--cb-light);
+  --cb-heading: var(--cb-text--cb-light);
+  --cb-subtitle: var(--cb-text--cb-mid);
+
+  --cb-button-border: var(--cb-dusk);
+  --cb-button-background: var(--cb-dark);
+  --cb-active-background: #081a20;
+  --cb-active-border: var(--cb-cyan);
+  --cb-icon-fill: var(--cb-cyan);
+  --cb-icon-size: 24px;
+  --cb-footer-text: var(--cb-pale-grey);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.cb__dark-mode) {
+    --cb-body: #ffffff;
+    --cb-light: #11121f;
+    --cb-dark: #ffffff;
+    --cb-grey: #737373;
+
+    --cb-text: var(--cb-text--cb-dark);
+    --cb-heading: var(--cb-text--cb-dark);
+    --cb-subtitle: var(--cb-grey);
+
+    --cb-button-border: var(--cb-pale-grey);
+    --cb-button-background: #f5f5f5;
+    --cb-active-background: #f4f4f5;
+    --cb-active-border: var(--cb-royal);
+    --cb-icon-fill: var(--cb-royal);
+    --cb-footer-text: var(--cb-light);
+  }
+}
+
+.cb__body.cb__light-mode {
+  --cb-body: #ffffff;
+  --cb-light: #11121f;
+  --cb-dark: #fff;
+  --cb-grey: #737373;
+
+  --cb-text: var(--cb-text--cb-dark);
+  --cb-heading: var(--cb-text--cb-dark);
+  --cb-subtitle: var(--cb-grey);
+
+  --cb-button-border: var(--cb-pale-grey);
+  --cb-button-background: #f5f5f5;
+  --cb-active-background: var(--cb-lavender);
+  --cb-active-border: var(--cb-royal);
+  --cb-icon-fill: var(--cb-royal);
+  --cb-footer-text: var(--cb-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cb__body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.075em;
+  width: 360px;
+  background: var(--cb-body);
+  color: var(--cb-text);
+}
+
+.cb__container {
+  padding: 1rem;
+}
+
+.cb__header {
+  margin-bottom: 28px;
+}
+
+.cb__heading-main {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--cb-text);
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--cb-subtitle);
+}
+
+.cb__header-control-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cb__section {
+  margin-bottom: 2.25em;
+}
+
+.cb__heading-sub {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  color: var(--cb-subtitle);
+}
+
+.cb__button {
+  align-items: center;
+  background: var(--cb-button-background);
+  border: 2px solid var(--cb-button-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.08em;
+  font-size-adjust: 0.5;
+
+  &:hover,
+  &:focus {
+    border-color: var(--cb-active-border);
+    background: var(--cb-active-background);
+  }
+
+  &.active {
+    border-color: var(--cb-active-border);
+    background: var(--cb-active-background);
+  }
+}
+
+.cb__button-theme-goggle {
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--cb-light);
+}
+
+.cb-options__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cb__button-option {
+  min-height: 60px;
+  text-align: left;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.2;
+}
+
+.cb__button-option-label-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cb__button-option-label {
+  font-size: 24px;
+  color: var(--cb-light);
+}
+
+.cb__button-option-description {
+  font-size: 16px;
+  color: var(--cb-text);
+}
+
+.cb__button-option-eyecon {
+  display: none;
+  height: var(--cb-icon-size);
+
+  & svg {
+    fill: var(--cb-icon-fill);
+  }
+}
+
+.cb__button-option.active .cb__button-option-eyecon {
+  display: block;
+}
+
+.cb__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--cb-footer-text);
+
+  .cb__link,
+  .cb__link:active,
+  .cb__link:visited {
+    color: var(--cb-light);
+  }
+
+  .cb__logo {
+    height: 20px;
+    fill: var(--cb-light);
+  }
+}
