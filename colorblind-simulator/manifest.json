@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Color Blind & Low Vision Simulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This vision simulator allows users to observe how people with colorblindness or low vision may perceive web-based content.",
   "permissions": ["activeTab", "storage"],
   "action": {
