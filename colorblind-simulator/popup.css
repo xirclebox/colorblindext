@@ -1,69 +1,64 @@
 :root {
-  --cb-light: #fff;
-  --cb-dark: #11121f;
-  --cb-grey: #34343b;
-  --cb-light-grey: #aaaaaa;
-  --cb-pale-grey: #c6c6c6;
-  --cb-dark-grey: #141416;
+  --cb-white: #fff;
+  --cb-black: #11121f;
+  --cb-grey-dark: #141416;
+  --cb-grey-mid: #737373;
+  --cb-grey-light: #aaaaaa;
+  --cb-grey-pale: #c6c6c6;
+  --cb-grey-muted: #34343b;
   --cb-cyan: cyan;
   --cb-royal: #371b8f;
   --cb-lavender: #ede7ff;
   --cb-dusk: #292c55;
-  --cb-body: var(--cb-dark);
+  --cb-active-dark: #081a20;
+  --cb-bg-light: #f5f5f5;
+}
 
-  --cb-text--cb-dark: var(--cb-dark-grey);
-  --cb-text--cb-mid: var(--cb-light-grey);
-  --cb-text--cb-light: var(--cb-light);
+:root {
+  --cb-body: var(--cb-black);
+  --cb-text-primary: var(--cb-white);
+  --cb-text-secondary: var(--cb-grey-light);
+  --cb-text-tertiary: var(--cb-grey-pale);
+  --cb-heading: var(--cb-white);
 
-  --cb-text: var(--cb-text--cb-light);
-  --cb-heading: var(--cb-text--cb-light);
-  --cb-subtitle: var(--cb-text--cb-mid);
-
+  --cb-button-bg: var(--cb-black);
   --cb-button-border: var(--cb-dusk);
-  --cb-button-background: var(--cb-dark);
-  --cb-active-background: #081a20;
-  --cb-active-border: var(--cb-cyan);
+  --cb-button-active-bg: var(--cb-active-dark);
+  --cb-button-active-border: var(--cb-cyan);
+
   --cb-icon-fill: var(--cb-cyan);
-  --cb-icon-size: 24px;
-  --cb-footer-text: var(--cb-pale-grey);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not(.cb__dark-mode) {
-    --cb-body: #ffffff;
-    --cb-light: #11121f;
-    --cb-dark: #ffffff;
-    --cb-grey: #737373;
+    --cb-body: var(--cb-white);
+    --cb-text-primary: var(--cb-black);
+    --cb-text-secondary: var(--cb-grey-mid);
+    --cb-text-tertiary: var(--cb-black);
+    --cb-heading: var(--cb-black);
 
-    --cb-text: var(--cb-text--cb-dark);
-    --cb-heading: var(--cb-text--cb-dark);
-    --cb-subtitle: var(--cb-grey);
+    --cb-button-bg: var(--cb-bg-light);
+    --cb-button-border: var(--cb-grey-pale);
+    --cb-button-active-bg: var(--cb-bg-light);
+    --cb-button-active-border: var(--cb-royal);
 
-    --cb-button-border: var(--cb-pale-grey);
-    --cb-button-background: #f5f5f5;
-    --cb-active-background: #f4f4f5;
-    --cb-active-border: var(--cb-royal);
     --cb-icon-fill: var(--cb-royal);
-    --cb-footer-text: var(--cb-light);
   }
 }
 
 .cb__body.cb__light-mode {
-  --cb-body: #ffffff;
-  --cb-light: #11121f;
-  --cb-dark: #fff;
-  --cb-grey: #737373;
+  --cb-body: var(--cb-white);
+  --cb-text-primary: var(--cb-black);
+  --cb-text-secondary: var(--cb-grey-mid);
+  --cb-text-tertiary: var(--cb-black);
+  --cb-heading: var(--cb-black);
 
-  --cb-text: var(--cb-text--cb-dark);
-  --cb-heading: var(--cb-text--cb-dark);
-  --cb-subtitle: var(--cb-grey);
+  --cb-button-bg: var(--cb-bg-light);
+  --cb-button-border: var(--cb-grey-pale);
+  --cb-button-active-bg: var(--cb-lavender);
+  --cb-button-active-border: var(--cb-royal);
 
-  --cb-button-border: var(--cb-pale-grey);
-  --cb-button-background: #f5f5f5;
-  --cb-active-background: var(--cb-lavender);
-  --cb-active-border: var(--cb-royal);
   --cb-icon-fill: var(--cb-royal);
-  --cb-footer-text: var(--cb-light);
 }
 
 * {
@@ -79,7 +74,7 @@
   letter-spacing: 0.075em;
   width: 360px;
   background: var(--cb-body);
-  color: var(--cb-text);
+  color: var(--cb-text-primary);
 }
 
 .cb__container {
@@ -87,20 +82,20 @@
 }
 
 .cb__header {
-  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
 }
 
 .cb__heading-main {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--cb-text);
+  margin-bottom: 0.25rem;
+  color: var(--cb-heading);
 }
 
 .subtitle {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: var(--cb-subtitle);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  color: var(--cb-text-secondary);
 }
 
 .cb__header-control-wrapper {
@@ -113,16 +108,16 @@
 }
 
 .cb__heading-sub {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   letter-spacing: 0.5px;
-  color: var(--cb-subtitle);
+  color: var(--cb-text-secondary);
 }
 
 .cb__button {
   align-items: center;
-  background: var(--cb-button-background);
+  background: var(--cb-button-bg);
   border: 2px solid var(--cb-button-border);
   border-radius: 8px;
   cursor: pointer;
@@ -132,33 +127,33 @@
 
   &:hover,
   &:focus {
-    border-color: var(--cb-active-border);
-    background: var(--cb-active-background);
+    border-color: var(--cb-button-active-border);
+    background: var(--cb-button-active-bg);
   }
 
   &.active {
-    border-color: var(--cb-active-border);
-    background: var(--cb-active-background);
+    border-color: var(--cb-button-active-border);
+    background: var(--cb-button-active-bg);
   }
 }
 
 .cb__button-theme-goggle {
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
   border-radius: 4px;
-  color: var(--cb-light);
+  color: var(--cb-text-primary);
 }
 
 .cb-options__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cb__button-option {
-  min-height: 60px;
+  min-height: 3.75rem;
   text-align: left;
-  padding: 12px;
+  padding: 0.75rem;
   display: flex;
   justify-content: space-between;
   line-height: 1.2;
@@ -170,18 +165,18 @@
 }
 
 .cb__button-option-label {
-  font-size: 24px;
-  color: var(--cb-light);
+  font-size: 1.5rem;
+  color: var(--cb-text-primary);
 }
 
 .cb__button-option-description {
-  font-size: 16px;
-  color: var(--cb-text);
+  font-size: 1rem;
+  color: var(--cb-text-primary);
 }
 
 .cb__button-option-eyecon {
   display: none;
-  height: var(--cb-icon-size);
+  height: 1.5rem;
 
   & svg {
     fill: var(--cb-icon-fill);
@@ -195,19 +190,19 @@
 .cb__footer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: var(--cb-footer-text);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--cb-text-tertiary);
 
   .cb__link,
   .cb__link:active,
   .cb__link:visited {
-    color: var(--cb-light);
+    color: var(--cb-text-primary);
   }
 
   .cb__logo {
-    height: 20px;
-    fill: var(--cb-light);
+    height: 1.25rem;
+    fill: var(--cb-text-primary);
   }
 }
