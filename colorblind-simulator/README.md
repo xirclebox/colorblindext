@@ -5,6 +5,7 @@ A Chrome extension that simulates various types of colorblindness and low vision
 ## Features
 
 ### Colorblindness Simulations
+
 - **Protanopia** - Red-blind (affects ~1% of males)
 - **Protanomaly** - Red-weak (affects ~1% of males)
 - **Deuteranopia** - Green-blind (affects ~1% of males)
@@ -15,6 +16,7 @@ A Chrome extension that simulates various types of colorblindness and low vision
 - **Achromatomaly** - Partial color blindness
 
 ### Low Vision Simulations
+
 - **Mild Blur** - Slight vision impairment
 - **Moderate Blur** - Moderate vision impairment
 - **Severe Blur** - Severe vision impairment
@@ -22,20 +24,19 @@ A Chrome extension that simulates various types of colorblindness and low vision
 - **Cataracts** - Cloudy/yellowed vision with blur
 
 ### Additional Features
+
 - **Persistent State** - Your selected filter is remembered across page reloads
-- **Error-Free** - Robust message handling prevents console errors
 - **Instant Feedback** - UI updates immediately when selecting filters
 
 ## Installation
 
 ### From Source (Developer Mode)
 
-1. Download or clone this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" using the toggle in the top-right corner
-4. Click "Load unpacked"
-5. Select the `colorblind-simulator` folder
-6. The extension is now installed!
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable "Developer mode" using the toggle in the top-right corner
+3. Click "Load unpacked"
+4. Select the `colorblind-simulator` folder
+5. The extension is now installed!
 
 ### Usage
 
@@ -58,6 +59,7 @@ A Chrome extension that simulates various types of colorblindness and low vision
 The extension uses SVG color matrix filters to accurately simulate different types of color vision deficiencies. The color matrices are based on research into how different types of colorblindness affect color perception.
 
 ### Recent Improvements
+
 - Added timeout handling for message passing to prevent runtime errors
 - Implemented state persistence using Chrome's storage API
 - Enhanced error handling for better reliability
@@ -66,6 +68,7 @@ The extension uses SVG color matrix filters to accurately simulate different typ
 ## Privacy
 
 This extension:
+
 - Works entirely locally in your browser
 - Does not collect any data
 - Does not send any information to external servers
