@@ -6,13 +6,13 @@ A Chrome extension that simulates various types of colorblindness and low vision
 
 ### Colorblindness Simulations
 
-- **Protanopia** - Red-blind (affects ~1% of males)
-- **Protanomaly** - Red-weak (affects ~1% of males)
-- **Deuteranopia** - Green-blind (affects ~1% of males)
-- **Deuteranomaly** - Green-weak (affects ~5% of males, most common)
-- **Tritanopia** - Blue-blind (rare)
-- **Tritanomaly** - Blue-weak (rare)
-- **Achromatopsia** - Complete color blindness (monochromacy)
+- **Protanopia** - Red-blind
+- **Protanomaly** - Red-weak
+- **Deuteranopia** - Green-blind
+- **Deuteranomaly** - Green-weak
+- **Tritanopia** - Blue-blind
+- **Tritanomaly** - Blue-weak
+- **Achromatopsia** - Complete color blindness
 - **Achromatomaly** - Partial color blindness
 
 ### Low Vision Simulations

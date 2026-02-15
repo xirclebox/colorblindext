@@ -1,21 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 :root {
   --cb-light: #fff;
   --cb-dark: #11121f;
   --cb-grey: #34343b;
-  --cb-light-grey: #aaaaaa;
+  --cb-light-grey: #aab8d2;
   --cb-pale-grey: #c6c6c6;
   --cb-dark-grey: #141416;
   --cb-cyan: cyan;
-  --cb-royal: #371b8f;
+  --cb-royal: #00042e;
   --cb-lavender: #ede7ff;
   --cb-dusk: #292c55;
   --cb-body: var(--cb-dark);
+  --body-font:
+    "DM Sans, Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  --alt-font: "Plus Jakarta Sans", sans-serif;
 
   --cb-text--cb-dark: var(--cb-dark-grey);
   --cb-text--cb-mid: var(--cb-light-grey);
   --cb-text--cb-light: var(--cb-light);
 
-  --cb-text: var(--cb-text--cb-light);
+  --cb-text: var(--cb-light);
   --cb-heading: var(--cb-text--cb-light);
   --cb-subtitle: var(--cb-text--cb-mid);
 
@@ -26,6 +32,7 @@
   --cb-icon-fill: var(--cb-cyan);
   --cb-icon-size: 24px;
   --cb-footer-text: var(--cb-pale-grey);
+  --cd-footer-link: var(--cb-cyan);
 }
 
 @media (prefers-color-scheme: light) {
@@ -45,6 +52,7 @@
     --cb-active-border: var(--cb-royal);
     --cb-icon-fill: var(--cb-royal);
     --cb-footer-text: var(--cb-light);
+    --cd-footer-link: var(--cb-dark);
   }
 }
 
@@ -52,7 +60,7 @@
   --cb-body: #ffffff;
   --cb-light: #11121f;
   --cb-dark: #fff;
-  --cb-grey: #737373;
+  --cb-grey: #34343b;
 
   --cb-text: var(--cb-text--cb-dark);
   --cb-heading: var(--cb-text--cb-dark);
@@ -64,6 +72,7 @@
   --cb-active-border: var(--cb-royal);
   --cb-icon-fill: var(--cb-royal);
   --cb-footer-text: var(--cb-light);
+  --cd-footer-link: var(--cb-light);
 }
 
 * {
@@ -73,12 +82,10 @@
 }
 
 .cb__body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-weight: 400;
+  font-family: var(--body-font);
+  font-size: 1rem;
   font-style: normal;
-  letter-spacing: 0.075em;
-  width: 360px;
+  width: 400px;
   background: var(--cb-body);
   color: var(--cb-text);
 }
@@ -92,14 +99,16 @@
 }
 
 .cb__heading-main {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-family: var(--alt-font);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
   color: var(--cb-text);
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-bottom: 20px;
   color: var(--cb-subtitle);
 }
@@ -114,10 +123,11 @@
 }
 
 .cb__heading-sub {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  font-family: var(--alt-font);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.031rem;
   color: var(--cb-subtitle);
 }
 
@@ -125,18 +135,13 @@
   align-items: center;
   background: var(--cb-button-background);
   border: 2px solid var(--cb-button-border);
-  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   letter-spacing: 0.08em;
-  font-size-adjust: 0.5;
+  outline: none;
 
   &:hover,
-  &:focus {
-    border-color: var(--cb-active-border);
-    background: var(--cb-active-background);
-  }
-
+  &:focus,
   &.active {
     border-color: var(--cb-active-border);
     background: var(--cb-active-background);
@@ -144,10 +149,12 @@
 }
 
 .cb__button-theme-goggle {
+  font-family: var(--alt-font);
   padding: 4px 8px;
   cursor: pointer;
-  border-radius: 4px;
   color: var(--cb-light);
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .cb-options__list {
@@ -157,9 +164,9 @@
 }
 
 .cb__button-option {
-  min-height: 60px;
+  min-height: 3.75rem;
   text-align: left;
-  padding: 12px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   line-height: 1.2;
@@ -171,13 +178,20 @@
 }
 
 .cb__button-option-label {
-  font-size: 24px;
+  font-family: var(--alt-font);
+  font-size: 1.5rem;
   color: var(--cb-light);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.6;
 }
 
 .cb__button-option-description {
-  font-size: 16px;
-  color: var(--cb-text);
+  font-family: var(--alt-font);
+  font-size: 1rem;
+  color: var(--cb-subtitle);
+  letter-spacing: 0;
+  font-weight: 500;
 }
 
 .cb__button-option-eyecon {
@@ -196,15 +210,16 @@
 .cb__footer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
-  font-size: 14px;
+  gap: 1rem;
+  margin-bottom: 1rem;
   color: var(--cb-footer-text);
+  font-size: 1.09rem;
+  font-family: var(--alt-font);
 
   .cb__link,
   .cb__link:active,
   .cb__link:visited {
-    color: var(--cb-light);
+    color: var(--cd-footer-link);
   }
 
   .cb__logo {
