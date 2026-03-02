@@ -11,16 +11,55 @@
       <header class="cb__header">
         <div class="cb__header-control-wrapper">
           <h1 class="cb__heading-main">Vision Simulator</h1>
-          <button class="cb__button cb__button-theme-goggle" id="themeToggle">
+          <button
+            class="cb__button cb__button-theme-goggle"
+            id="themeToggle"
+            aria-live="polite"
+            role="switch"
+            aria-checked="true"
+          >
             Light
           </button>
+        </div>
+        <div class="cb__badge-wrapper">
+          <h2 class="cb__heading-sub">Active filters</h2>
+          <div class="cb__active-filters-row">
+            <div
+              id="active-filters"
+              aria-live="polite"
+              class="cb__active-filters"
+            ></div>
+            <button
+              id="resetFilters"
+              class="cb__button cb__button-reset"
+              aria-label="Reset all filters to default"
+              hidden
+            >
+              Reset
+            </button>
+          </div>
+          <p class="cb__section-hint">
+            Click to select a filter and click again to deselect.
+          </p>
         </div>
       </header>
       <main>
         <section class="cb__section">
-          <h2 class="cb__heading-sub">Types of color vision</h2>
-          <div class="cb-options__list">
-            <button class="cb__button cb__button-option" data-filter="none">
+          <h2 class="cb__heading-sub" id="types-of-color-vision">
+            Type of color vision
+          </h2>
+          <div
+            class="cb-options__list"
+            role="group"
+            aria-labelledby="types-of-color-vision"
+          >
+            <button
+              class="cb__button cb__button-option"
+              data-filter="none"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="true"
+            >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Trichromacy</span>
                 <span class="cb__button-option-description">Normal vision</span>
@@ -43,6 +82,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="protanopia"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Protanopia</span>
@@ -66,6 +108,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="protanomaly"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Protanomaly</span>
@@ -89,6 +134,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="deuteranopia"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Deuteranopia</span>
@@ -112,6 +160,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="deuteranomaly"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Deuteranomaly</span>
@@ -135,12 +186,14 @@
             <button
               class="cb__button cb__button-option"
               data-filter="tritanopia"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Tritanopia</span>
                 <span class="cb__button-option-description">Blue-blind</span>
               </span>
-
               <span aria-hidden="true" class="cb__button-option-eyecon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,12 +212,14 @@
             <button
               class="cb__button cb__button-option"
               data-filter="tritanomaly"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Tritanomaly</span>
                 <span class="cb__button-option-description">Blue-weak</span>
               </span>
-
               <span aria-hidden="true" class="cb__button-option-eyecon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,6 +238,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="achromatopsia"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Achromatopsia</span>
@@ -208,6 +266,9 @@
             <button
               class="cb__button cb__button-option"
               data-filter="achromatomaly"
+              data-group="color-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Achromatomaly</span>
@@ -233,11 +294,20 @@
         </section>
 
         <section class="cb__section">
-          <h2 class="cb__heading-sub">Low Vision Conditions</h2>
-          <div class="cb-options__list">
+          <h2 class="cb__heading-sub" id="low-vision-condition">
+            Low vision condition
+          </h2>
+          <div
+            class="cb-options__list"
+            role="group"
+            aria-labelledby="low-vision-condition"
+          >
             <button
               class="cb__button cb__button-option"
               data-filter="blur-mild"
+              data-group="low-vision"
+              role="switch"
+              aria-checked="false"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Mild Blur</span>
@@ -263,6 +333,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="blur-moderate"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Moderate Blur</span>
@@ -288,6 +359,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="blur-severe"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Severe Blur</span>
@@ -313,6 +385,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="low-contrast"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Low Contrast</span>
@@ -338,6 +411,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="cataracts"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Cataracts</span>
@@ -363,6 +437,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="tunnel-vision"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Tunnel Vision</span>
@@ -388,6 +463,7 @@
             <button
               class="cb__button cb__button-option"
               data-filter="central-vision-loss"
+              data-group="low-vision"
             >
               <span class="cb__button-option-label-wrapper">
                 <span class="cb__button-option-label">Central Vision Loss</span>
@@ -414,7 +490,7 @@
       </main>
       <footer class="cb__footer">
         <p>
-          If you don't see a change after chosing an option, refresh the page
+          If you don't see a change after choosing an option, refresh the page
           you want to test.
         </p>
         <p>
@@ -447,14 +523,10 @@
           >
             <g>
               <path
-                d="M0,0h1.081v6.752h0.036c0.432-0.918,1.495-1.675,2.845-1.675c2.593,0,3.169,1.765,3.169,3.583v4.952H6.05
-                V8.714c0-1.351-0.378-2.665-2.088-2.665c-1.603,0-2.881,1.116-2.881,3.403v4.159H0V0z"
+                d="M0,0h1.081v6.752h0.036c0.432-0.918,1.495-1.675,2.845-1.675c2.593,0,3.169,1.765,3.169,3.583v4.952H6.05 V8.714c0-1.351-0.378-2.665-2.088-2.665c-1.603,0-2.881,1.116-2.881,3.403v4.159H0V0z"
               />
               <path
-                d="M15.355,12.995H15.32c-0.433,0.359-1.279,0.539-1.891,0.539c-2.27,0-3.907-1.729-3.907-3.924
-                c0-2.305,1.765-3.961,4.177-3.961c2.413,0,4.178,1.657,4.178,3.961c0,1.333-0.666,2.413-1.17,3.258l-3.457,5.744H11.88
-                L15.355,12.995z M16.688,9.609c0-1.765-1.225-2.989-2.989-2.989c-1.764,0-2.988,1.225-2.988,2.989c0,1.657,1.332,2.989,2.988,2.989
-                S16.688,11.266,16.688,9.609z"
+                d="M15.355,12.995H15.32c-0.433,0.359-1.279,0.539-1.891,0.539c-2.27,0-3.907-1.729-3.907-3.924 c0-2.305,1.765-3.961,4.177-3.961c2.413,0,4.178,1.657,4.178,3.961c0,1.333-0.666,2.413-1.17,3.258l-3.457,5.744H11.88 L15.355,12.995z M16.688,9.609c0-1.765-1.225-2.989-2.989-2.989c-1.764,0-2.988,1.225-2.988,2.989c0,1.657,1.332,2.989,2.988,2.989 S16.688,11.266,16.688,9.609z"
               />
             </g>
           </svg>

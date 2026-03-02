@@ -3,3 +3,6 @@
 
 # Ignore PEM files (private keys, certificates)
 *.pem
+
+# Ignore folder
+archive
