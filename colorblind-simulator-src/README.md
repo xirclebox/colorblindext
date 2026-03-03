@@ -30,13 +30,20 @@ A Chrome and Firefox extension that simulates various types of colorblindness an
 
 ## Installation
 
-### From Source (Developer Mode)
+### From Source Chrome
 
 1. Open Chrome and navigate to `chrome://extensions/`
 2. Enable "Developer mode" using the toggle in the top-right corner
 3. Click "Load unpacked"
 4. Select the `colorblind-simulator` folder
 5. The extension is now installed!
+
+### From Source Firefox
+
+1. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+2. Click "Load Temporary Add-on…"
+3. Navigate to the `colorblind-simulator` folder and select the `manifest.json` file
+4. The extension is now installed!
 
 ### Usage
 
@@ -60,10 +67,10 @@ The extension uses SVG color matrix filters to accurately simulate different typ
 
 ### Recent Improvements
 
-- Added timeout handling for message passing to prevent runtime errors
-- Implemented state persistence using Chrome's storage API
-- Enhanced error handling for better reliability
-- Improved initialization sequence for smoother performance
+- You can now create combinations by selecting one color vision filter and one low vision filter
+- Added badges to show which filters are active
+- Added a "Reset" button that clears the active filters
+- Header is now sticky so that the badges are always visible
 
 ## Privacy
 
@@ -85,6 +92,7 @@ MIT License - Feel free to use and modify as needed.
 
 ## Resources
 
+- [colorblind.fyi](https://www.colorblind.fyi)
 - [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 - [Color Blindness Information](https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness)
